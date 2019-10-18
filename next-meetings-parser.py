@@ -23,9 +23,15 @@ def main(argv):
         html = response.read().decode('utf-8')
         soup = BeautifulSoup(html, 'lxml')
         mydivs = soup.find("div", {"class": "main-wrapper"})
+        with open("main-wrapper.html", "w+") as f:
+            f.write(str(mydivs))
+        # mystrongs = [td.find("strong") for td in mydivs.findAll("center", text = re.compile('COMMITTEE MEETINGS FOR'))]
         res = mydivs.findAll(text=re.compile(key, re.I))
-        print(res)
-        print(key in html)
+        if res:
+            mystrongs = mydivs.find("center", text = re.compile('COMMITTEE MEETINGS FOR'))
+            mystrongs2 = mystrongs.find_next("center")
+            print(mystrongs, '\n',mystrongs2)
+            print(res)
 
 if __name__ == '__main__':
     main(sys.argv)
