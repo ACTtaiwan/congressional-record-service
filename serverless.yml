@@ -1,0 +1,12 @@
+service: next-meetings-parser
+
+provider:
+  name: aws
+  runtime: python3.6
+
+package:
+  artifact: next-meetings-parser/package.zip
+
+functions:
+  ebay_scrape:
+    handler: handler.scrape
