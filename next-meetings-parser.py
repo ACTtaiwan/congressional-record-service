@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+'''
+url = https://www.congress.gov/congressional-record
+url = https://www.congress.gov/congressional-record/2019/9/24/daily-digest
+key = "COMMITTEE MEETINGS FOR"
+key = "Taiwan"
+'''
 import sys
 import urllib.request
 from html.parser import HTMLParser
