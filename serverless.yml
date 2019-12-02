@@ -1,12 +1,12 @@
-service: next-meetings-parser
+service: cr-scraper
 
 provider:
   name: aws
   runtime: python3.6
 
 package:
-  artifact: next-meetings-parser/package.zip
+  artifact: scraper/package.zip
 
 functions:
-  ebay_scrape:
+  cr_scrape:
     handler: handler.scrape
